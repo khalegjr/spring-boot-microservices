@@ -75,3 +75,4 @@ build/
 *.ppk
 
 /.metadata/
+.sonarlint

@@ -3,14 +3,13 @@ server:
 spring:
   application:
     name: config-server
-  profiles:
-    active:
-      - native
   cloud:
     config:
       server:
-        native:
-          search-locations:
-            - classpath:/config
-            - classpath:/config/{application}
-            - classpath:/config/{application}/{profile}
+        git:
+          uri: https://github.com/khalegjr/microservices-configs-server
+#          username: username
+#          password: pass
+          default-label: main
+          search-paths:
+          - 'greeting-service*'
